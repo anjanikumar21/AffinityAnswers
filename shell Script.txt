@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Download the file
+curl -o NAVAll.txt https://www.amfiindia.com/spages/NAVAll.txt
+
+# Extract Scheme Name and Asset Value fields
+awk -F ';' '{print $2 "\t" $5}' NAVAll.txt > output.tsv
+
